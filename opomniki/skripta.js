@@ -9,10 +9,11 @@ window.addEventListener('load', function() {
 			var opomnik = opomniki[i];
 			var casovnik = opomnik.querySelector("span");
 			var cas = parseInt(casovnik.innerHTML);
-			cas--;
+			if(cas != 0)cas--;
 			casovnik.innerHTML = cas;
 			if(cas == 0){
 				window.alert( "Opomnik!\n\nZadolžitev "+ opomnik.querySelector(".naziv_opomnika").innerHTML +" je potekla!");
+				document.querySelector("#opomniki").removeChild(opomnik);
 			}
 		}
 	}
